@@ -7,4 +7,5 @@ class Mensaje (ModeloBase):
     id: Optional[int] = None
     user: str
     mensaje: str
-    
+#Inicializacion de FastAPI
+app = FastAPI()  

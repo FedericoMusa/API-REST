@@ -12,3 +12,12 @@ app = FastAPI()
 #Base de datos simulada 
 mensaje_db =[]
 contador_id = 0 #para asegurar ids unicos
+#crear mensaje
+@app.post("/mensajes/", response_model=Mensaje)
+def crear_mensaje(mensaje:Mensaje):
+    global contador_id
+    mensaje.id = contador_id
+    contador_id + = 1
+    mensaje_db.append(mensaje)
+    return mensaje
+    

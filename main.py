@@ -9,3 +9,6 @@ class Mensaje (ModeloBase):
     mensaje: str
 #Inicializacion de FastAPI
 app = FastAPI()  
+#Base de datos simulada 
+mensaje_db =[]
+contador_id = 0 #para asegurar ids unicos

@@ -20,4 +20,7 @@ def crear_mensaje(mensaje:Mensaje):
     contador_id + = 1
     mensaje_db.append(mensaje)
     return mensaje
-    
+#obtener todos los mensajes
+@app.get("/mensajes/", response_model=List[Mensaje])
+def obtener_mensajes():
+    return mensaje_db   

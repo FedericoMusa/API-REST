@@ -2,7 +2,7 @@
 from typing import Optional, List
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
-
+                     
 # Modelo base
 class Mensaje(BaseModel):
     id: Optional[int] = None

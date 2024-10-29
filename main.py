@@ -31,3 +31,12 @@ def obtener_mensaje(mensaje_id: int):
         if mensaje.id == mensaje_id:
             return mensaje
     raise HTTPException(status_code=404, detail="Mensaje no encontrado")
+#actualizar un mensaje existente
+@app.put("/mensajes/{mensaje_id}", response_model=Mensaje)
+def actualizar_mensaje(mensaje_id: int, mensaje: Mensaje):
+    for index, _mensaje in enumerate(mensaje_db):
+        if _mensaje.id == mensaje_id:
+            mensaje_db[index] = mensaje_actualizado.dict()#actualizar el mensaje
+            mensaje_db[index].id = mensaje_id
+            return mensaje_db[index]
+    raise HTTPException(status_code=404, detail="Mensaje no encontrado")	
